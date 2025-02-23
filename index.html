@@ -17,7 +17,7 @@
         .card {
             position: relative;
             width: 300px;
-            padding: 20px;
+            padding: 30px;
             background: white;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             border-radius: 10px;
@@ -57,6 +57,7 @@
             display: none;
             margin-top: 20px;
             width: 150px;
+            animation: fadeIn 1s ease-in-out;
         }
     </style>
 </head>
@@ -64,8 +65,8 @@
     <div class="card">
         <div class="heart">❤️</div>
         <h1>my pookie</h1>
-        <p>i'm just experimenting with code, but thought might as well remind u of smt... </p>
-        <button class="button" onclick="showLoveMessage()"> click me! ❤️</button>
+        <p>you probably forgot with your gold fish memory, so i might as well remind u of smt... </p>
+        <button class="button"> click me! ❤️</button>
     </div>
     <img id="snoopy" class="snoopy-gif" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExanFpbmhjb2R1OGF3MGFqajl4dzNhMmJ5bHF6bjZyMjJydGp6ejU4NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7k3ThwwMXnHCE/giphy.gif" alt="Snoopy Love">
     <script>
@@ -74,6 +75,7 @@
                 document.getElementById("snoopy").style.display = "block";
             }
             document.querySelector(".button").addEventListener("click", showLoveMessage);
+
         });
     </script>
 </body>
