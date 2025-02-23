@@ -57,25 +57,56 @@
             display: none;
             margin-top: 20px;
             width: 150px;
-            animation: fadeIn 1s ease-in-out;
+            animation: fadeIn .5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(.9); }
+        }
+        .nextbutton {
+            display: none;
+            position: absolute;
+            bottom: 8px;
+            right: 16px;
+            margin-top: 40px;
+            padding: 10px 20px;
+            background-color: #e91e63;
+            color: white;
+            font-weight: bold;
+            border: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            cursor: pointer;
+            transition: transform 0.2s;
         }
     </style>
 </head>
 <body>
-    <div class="card">
-        <div class="heart">❤️</div>
-        <h1>my pookie</h1>
-        <p>you probably forgot with your gold fish memory, so i might as well remind u of smt... </p>
-        <button class="button"> click me! ❤️</button>
+    <div class="page1"> 
+        <div class="card">
+            <div class="heart">❤️</div>
+            <h1>my pookie</h1>
+            <p>you probably forgot with your gold fish memory, so i might as well remind u of smt... </p>
+            <button class="button"> click me! ❤️</button>
+        </div>
+        <div class="body">
+            <button class = "nextbutton"> hm...</button>
+        </div>
     </div>
     <img id="snoopy" class="snoopy-gif" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExanFpbmhjb2R1OGF3MGFqajl4dzNhMmJ5bHF6bjZyMjJydGp6ejU4NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7k3ThwwMXnHCE/giphy.gif" alt="Snoopy Love">
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             function showLoveMessage() {
                 document.getElementById("snoopy").style.display = "block";
+                document.querySelector(".nextbutton").style.display = "block";
             }
             document.querySelector(".button").addEventListener("click", showLoveMessage);
 
+            function nextPage() {
+                document.querySelector(".page1").style.display="none";
+                document.getElementById("snoopy").style.display ="none";
+            }
+            document.querySelector(".nextbutton").addEventListener("click", nextPage)
         });
     </script>
 </body>
